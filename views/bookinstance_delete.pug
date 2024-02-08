@@ -1,0 +1,14 @@
+extends layout
+
+block content 
+    h1 <strong>#{title}</strong>
+    h5 <strong>Title: </strong>  
+        a(href=book.book.url) #{book.book.title}
+    p Status: #{book.status}
+    
+    hr
+    form(method='POST')
+      div.form-group
+        input#authorid.form-control(type='hidden', name='authorid', value=book._id )
+
+      button.btn.btn-primary(type='submit') Delete
